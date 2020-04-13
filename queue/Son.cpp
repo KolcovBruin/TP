@@ -5,21 +5,6 @@
 
 using namespace std;
 
-//float sub1::cnt_high_el()
-//{
-//    float z = 0;
-//    Unit* last = get_last();
-//    int t = size;
-//
-//    while (t > 0)
-//    {
-//        z = z + (last->value);
-//        last = last->prev;
-//        t--;
-//    }
-//
-//    return z / size;
-//}
 float sub1::cnt_high_el()
 {
     float cnt_ex=0;
@@ -37,18 +22,17 @@ float sub1::cnt_high_el()
 
 float sub2::cnt_high_el()
 {
-    float z = 0;
-    Unit* last = get_last();
-    int t = size;
-
-    while (t > 0)
+    float cnt_ex=0;
+    Unit* last=get_last();
+    int size_f=size;
+    while (size_f>1)
     {
-        z = z + (last->value);
-        last = last->prev;
-        t--;
+        if ((last->value)>(last->prev->value))
+            cnt_ex++;
+        last=last->prev;
+        size_f--;
     }
-
-    return z / size;
+    return cnt_ex;
 }
 
 int sub2::pop()
@@ -83,18 +67,17 @@ bool sub2::check()
 
 float sub3::cnt_high_el()
 {
-    float z = 0;
-    Unit* last = get_last();
-    int t = size;
-
-    while (t > 0)
+   float cnt_ex=0;
+    Unit* last=get_last();
+    int size_f=size;
+    while (size_f>1)
     {
-        z = z + (last->value);
-        last = last->prev;
-        t--;
+        if ((last->value)>(last->prev->value))
+            cnt_ex++;
+        last=last->prev;
+        size_f--;
     }
-
-    return z / size;
+    return cnt_ex;
 }
 
 int sub3::pop()
