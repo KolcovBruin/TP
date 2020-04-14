@@ -5,7 +5,7 @@
 
 using namespace std;
 
-float sub1::cnt_high_el()
+float sub1::cnt_high_el()  //Подсчет числа элементов, значение которых превышает значение предыдущего элемента
 {
     float cnt_ex=0;
     Unit* last=get_last();
@@ -20,7 +20,7 @@ float sub1::cnt_high_el()
     return cnt_ex;
 }
 
-float sub2::cnt_high_el()
+float sub2::cnt_high_el()//Подсчет числа элементов, значение которых превышает значение предыдущего элемента
 {
     float cnt_ex=0;
     Unit* last=get_last();
@@ -65,7 +65,7 @@ bool sub2::check()
     return Queue::check();
 }
 
-float sub3::cnt_high_el()
+float sub3::cnt_high_el()   //Подсчет числа элементов, значение которых превышает значение предыдущего элемента
 {
    float cnt_ex=0;
     Unit* last=get_last();

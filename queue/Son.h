@@ -7,7 +7,6 @@ class sub1 : public Queue
 {
 public:
     float cnt_high_el();
- //   float sredarifmet();
 };
 
 class sub2 : protected Queue
@@ -20,7 +19,6 @@ public:
     void merger(sub2& ob1, sub2& ob2);
     bool check();//Проверяем на пустоту
     float cnt_high_el();
-   // float sredarifmet();
 };
 
 class sub3 : private Queue
@@ -33,5 +31,4 @@ public:
     void merger(sub3& ob1, sub3& ob2);
     bool check();//Проверяем на пустоту
     float cnt_high_el();
-   // float sredarifmet();
 };
