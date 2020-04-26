@@ -15,7 +15,7 @@ private:
 protected:
     int size;
     Unit* get_last();//Возвращаем указатель на последний элемент для наследников
-
+ 
 public:
     Queue();
     ~Queue();
@@ -25,5 +25,6 @@ public:
     void copy(Queue& ob);// Копирование очереди
     void merger(Queue& ob1, Queue& ob2); // Слияние очереди
     bool check();//Проверяем на пустоту очередь
+ 
 };
 

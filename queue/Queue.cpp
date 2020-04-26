@@ -9,7 +9,7 @@ using namespace std;
 
 Unit* Queue::get_last()
 {
-    return last;
+    return last; //возвращаем указательна последний элемент
 }
 
 
@@ -165,7 +165,7 @@ void Queue::merger(Queue &ob1,Queue &ob2)
 
     for (int i = 0; i < ob2.size; i++)
     {
-        push(arr2[i]);
+        this->push(arr2[i]);
     }
 
     delete[] arr2;
