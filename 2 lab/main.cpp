@@ -98,53 +98,133 @@ int main()
     menu=0;
     STACK STACK_name;
     STACK_name.ptr_last();
-    //list_size(LIST_NAME, 10); // устанавливаем первоначальный размер
-    int num_; // для размера списка
+    int num_; // для размера стека
     int rez=0;
-    while (menu != 15)
+    while (menu != 11)
     {
-        system("cls");
         cout << " Задание 2. Бинарная операция. Работа со стеком.\n";
         cout << " Введите номер одного из нижеперечисленных пунктов меню.\n";
         cout << " Меню:\n";
-        cout << " [00]: Изменение значения X; X=" << X << endl;
+        cout << " [00]: Изменение значения X-Число6 с которым производятся операции; X=" << X << endl;
         cout << " [01]: Создание стека"<<endl;
         cout << " [02]: Вывод стека"<<endl;
-        cout << " [03]: ДЛС < X\n";
-        cout << " [04]: X < ДЛС\n";
-        cout << " [05]: ДЛС > X\n";
-        cout << " [06]: X > ДЛС\n";
-        cout << " [07]: ДЛС == X\n";
-        cout << " [08]: X == ДЛС\n";
-        cout << " [09]: ДЛС != X\n";
-        cout << " [10]: X != ДЛС\n";
-        cout << " [11]: ДЛС <= X\n";
-        cout << " [12]: X <= ДЛС\n";
-        cout << " [13]: ДЛС >= X\n";
-        cout << " [14]: X >= ДЛС\n";
-        cout << " [15]: Завершение работы программы -->||<" << endl;
+        cout << " [03]: Стек+Х"<<endl;
+        cout << " [04]: Стек+=Х"<<endl;
+        cout << " [05]: Стек-Х"<<endl;
+        cout << " [06]: Стек-=X"<<endl;
+        cout << " [07]: Стек*X"<<endl;
+        cout << " [08]: Стек*=X"<<endl;
+        cout << " [09]: Стек/Х"<<endl;
+        cout << " [10]: Стек/=Х"<<endl;
+        cout << " [11]: Завершение работы программы -->||<" << endl;
         cout << " ";
-        cin >> menu;
-        
-        
         cin >> menu;
       
         switch (menu)
         {
-        
-            case 2: cout <<"Введите размер стека"<<endl;
+            case 0: cout <<"Введите Х"<<endl;
+                cin>>X;
+                break;
+            case 1: cout <<"Введите размер стека"<<endl;
                 cin>>num_;
                 stack_create(STACK_name,num_);
                 STACK_name.out();
-                STACK_name.ptr_move();
+                
+                break;
+            case 2:
+                cout<<"Стек состоит из:"<<endl;
+                STACK_name.out();
+            case 3:
+                STACK_name.ptr_last();
+                for (int i=0;i<STACK_name.size();i++)
+                {
+                    cout<<"Элемент стека №"<<i<<"+"<<X<<"=";
+                
                 rez=X+STACK_name;
-                cout<<rez;
-                 STACK_name.ptr_move();
-                rez=STACK_name+=X;
-                cout<<rez;
-            break;
+                cout<<rez<<endl;
+                    STACK_name.ptr_move();
+                }
+                break;
+                case 4:
+                    STACK_name.ptr_last();
+                    for (int i=0;i<STACK_name.size();i++)
+                    {
+                        cout<<"Элемент стека №"<<i<<"+="<<X<<"=";
+                   
+                    rez=STACK_name+=X;
+                    cout<<rez<<endl;
+                         STACK_name.ptr_move();
+                    }
+                    break;
+
+                case 5:
+                    STACK_name.ptr_last();
+                    for (int i=0;i<STACK_name.size();i++)
+                    {
+                        cout<<"Элемент стека №"<<i<<"-"<<X<<"=";
+                    rez=X-STACK_name;
+                    cout<<rez<<endl;
+                         STACK_name.ptr_move();
+                    }
+                    break;
+                    case 6:
+                        STACK_name.ptr_last();
+                        for (int i=0;i<STACK_name.size();i++)
+                        {
+                            cout<<"Элемент стека №"<<i<<"-="<<X<<"=";
+                        rez=STACK_name-=X;
+                        cout<<rez<<endl;
+                             STACK_name.ptr_move();
+                        }
+                        break;
+                
+
+                case 7:
+                    STACK_name.ptr_last();
+                    for (int i=0;i<STACK_name.size();i++)
+                    {
+                        cout<<"Элемент стека №"<<i<<"*"<<X<<"=";
+                    rez=X*STACK_name;
+                    cout<<rez<<endl;
+                         STACK_name.ptr_move();
+                    }
+                    break;
+                    case 8:
+                        STACK_name.ptr_last();
+                        for (int i=0;i<STACK_name.size();i++)
+                        {
+                            cout<<"Элемент стека №"<<i<<"*="<<X<<"=";
+                        rez=STACK_name*=X;
+                        cout<<rez<<endl;
+                             STACK_name.ptr_move();
+                        }
+                        break;
+                        
+
+                        case 9:
+                            STACK_name.ptr_last();
+                            for (int i=0;i<STACK_name.size();i++)
+                            {
+                                cout<<"Элемент стека №"<<i<<"/"<<X<<"=";
+                            rez=X/STACK_name;
+                            cout<<rez<<endl;
+                                 STACK_name.ptr_move();
+                            }
+                            break;
+                            case 10:
+                                STACK_name.ptr_last();
+                                for (int i=0;i<STACK_name.size();i++)
+                                {
+                                    cout<<"Элемент стека №"<<i<<"/="<<X<<"=";
+                                rez=STACK_name/=X;
+                                cout<<rez<<endl;
+                                     STACK_name.ptr_move();
+                                }
+                                break;
+                
+           
         
-        case 17: cout << "| Завершение работы программы." << endl; break;
+        case 11: cout << "| Завершение работы программы." << endl; break;
         default:
             cout << "| Введено неверное значение." << endl;
             break;

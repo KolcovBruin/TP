@@ -3,7 +3,6 @@
 STACK::STACK()
 {
     NUM = 0;
-  //  START = nullptr;
     END = nullptr;
     ptr = nullptr;
 }
@@ -87,12 +86,7 @@ void STACK::ptr_last()
         cout << "| Список пуст.\n";
         return;
     }
-    if (ptr==nullptr)
-    {
-        ptr=END;
-    }
-    else
-    {
+   
         if (ptr->prev==nullptr)
         {
             cout << "| Достигнут конец стека"<<endl;
@@ -101,7 +95,7 @@ void STACK::ptr_last()
         {
             ptr=ptr->prev;
         }
-    }
+    
 }
 
 int STACK::get_value()
@@ -116,7 +110,7 @@ int STACK::size()
 
 void STACK::out()
 {
-    cout << "|";
+    cout<<"Стек состоит из:"<<endl;
     Unit* tmp = END;
     while (tmp->prev!=nullptr) //?
     {
@@ -135,4 +129,36 @@ int operator + (int X, const STACK& right)
 int STACK::operator += (int X)
 {
     return X+ptr->value;
+
+}
+int operator -(int X, const STACK& right)
+{
+    
+    return X-right.ptr->value;
+}
+int STACK::operator -= (int X)
+{
+    return X-ptr->value;
+
+}
+
+int operator *(int X, const STACK& right)
+{
+    
+    return X*right.ptr->value;
+}
+int STACK::operator *= (int X)
+{
+    return X*ptr->value;
+
+}
+int operator /(int X, const STACK& right)
+{
+    
+    return int(X/right.ptr->value);
+}
+int STACK::operator /= (int X)
+{
+    return int(X/ptr->value);
+
 }
