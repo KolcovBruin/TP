@@ -48,7 +48,7 @@ void LONG::show()
 }
 void LONG::push(long int data)
 {
-   value=data;
+    value=data;
 }
 void LONG::push_usr(long int value)
 {

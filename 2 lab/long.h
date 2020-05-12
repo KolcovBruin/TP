@@ -2,7 +2,7 @@
 class LONG
 {
 public:
-   void push(long int data);
+   void push( long int data);
     void push_usr(long int value);
     LONG();
     explicit LONG(int x = 0); // параметр по умолчанию, без инициализации присвоит классу значение value = 0

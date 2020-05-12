@@ -116,7 +116,7 @@ int main()
         cout << " '09': Стек/Х"<<endl;
         cout << " '10': Стек/=Х"<<endl;
         cout << " '11': Завершение работы программы " << endl;
-        cout << " ";
+//        cout << " ";
         cin >> menu;
       
         switch (menu)
