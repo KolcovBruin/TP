@@ -96,6 +96,7 @@ int main ()
 //    ptr_arr[0]->view();
     int menu=-1;
     int menu_inp=0;
+    int menu_new=-1;
     while (menu!=0)
     {
         cout<<"1-new; 2-bin; 3-oct; 0-ext"<<endl;
@@ -110,8 +111,10 @@ int main ()
                 switch (menu_inp)
                 {
                     case 1:
-                        while (a!=5)
+                        
+                        while (menu_new!=0)
                         {
+                            
                         for (int ii=0;ii<i;ii++)
                                {
                                    ptr[1][ii]=ptr[0][ii];
@@ -127,10 +130,14 @@ int main ()
                         }
                         ptr[1]=new int[i];
                         ptr[0][i-1]=a;
+                            cout<<"Добавить еще один элемент:"<<endl;
+                            cout<<"'1'-да'"<<endl;
+                            cout<<"'0'-нет'"<<endl;
+                            cin>>menu_new;
                         }
                         break;
                     case 2:
-                        while (a!=5)
+                        while (!data.eof())
                         {
                         for (int ii=0;ii<i;ii++)
                                 {
@@ -138,7 +145,8 @@ int main ()
                                 }
                         
                              cout<<"Считывание из файла"<<endl;
-                             data>>a;
+                            
+                           
                             cout<<a<<endl;
                          i++;
                          ptr[0]=new int[i];
