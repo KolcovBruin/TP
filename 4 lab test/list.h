@@ -3,10 +3,14 @@ using namespace std;
 
 
 template <typename T = int>
-struct element {
-    T value = 0; //значение элемента очереди
-    element<T> *prevEl = 0; //ссылка на предыдущий элемент очереди
+class element {
+    
+
+public:
+    T value = 0;
+    element<T> *prevEl = 0; 
     element<T> *nextEl = 0;
+    
 };
 
 
@@ -24,6 +28,7 @@ protected:
         return head;
     };
 public:
+    
     Queue() { //конструктор очереди
         size = 0;
     };
@@ -38,7 +43,7 @@ public:
         }
     };
 
-    void push(T value) { //добавление элементов в конец очереди
+    void push(T value) {
         
         element<T> *newEl = new(element<T>); //выделила память под новый элемент
         if (size==0)
@@ -55,9 +60,7 @@ public:
         tail=newEl;
         newEl->nextEl=nullptr;
         size++;
-//        cout<<tail->value<<endl;
-//        cout<<head->value<<endl;
-        //cout<<head->nextE->value<<endl;
+
     };
 
 void operator+(T value)
@@ -65,15 +68,55 @@ void operator+(T value)
     {
         push(value);
     }
-   void operator==(const Queue<T> & it)
+   bool operator==(const Queue<T> & it)
     {
+        element<T> *buffer_1 = tail;
+        element<T> *buffer_2 = it.tail;
         for (int i=0;i<size;i++)
         {
+            if ((buffer_1->value)!=(buffer_2->value))
+            {
+                return false;
+            }
+            buffer_1=buffer_1->prevEl;
+            buffer_2=buffer_2->prevEl;
             
         }
+        return true;
+    }
+    bool operator!=(const Queue<T> & it)
+    {
+        element<T> *buffer_1 = tail;
+        element<T> *buffer_2 = it.tail;
+        for (int i=0;i<size;i++)
+        {
+            if ((buffer_1->value)==(buffer_2->value))
+            {
+                return false;
+            }
+            buffer_1=buffer_1->prevEl;
+            buffer_2=buffer_2->prevEl;
+            
+        }
+        return true;
     }
     int get_size()
     {
         return size;
     }
+    void view()
+    {
+        int lc_size=size;
+         element<T> *buffer = tail;
+      while (lc_size > 0)
+        {
+           
+            cout<<buffer->value<<"  ";
+            buffer=buffer->prevEl;
+            
+            lc_size--;
+        }
+        cout<<endl;
+    };
+    
 };
