@@ -6,12 +6,15 @@ class EXMP
 {
     //int number;
     //int **bin;
-    //int work_el;
-    int size;
-public:
-    void set_num(int a);
-    int get_num();
     int number;
+    int type;
+    char target;
+    //int work_el;
+    //int size;
+public:
+    void new_el(int a,int b);
+    int get_num();
+   
     void view() ;
 //    EXMP(int **ptr, int N);
 //    ~EXMP();

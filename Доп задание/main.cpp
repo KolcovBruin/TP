@@ -13,13 +13,14 @@ int main ()
 {
     
     srand(time(NULL));
-    int a=0;
+    int a=0,b=0;
     EXMP* ptr;
     ptr= new EXMP[10];
     for ( int i=0;i<10;i++)
     {
         a=rand()%10000;
-        ptr[i].set_num(a);
+        b=rand()%10;
+        ptr[i].new_el(a,b);
     }
     for ( int i=0;i<10;i++)
     {

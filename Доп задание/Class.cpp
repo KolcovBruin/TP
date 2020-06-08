@@ -4,13 +4,14 @@
 #include <fstream>
 #include <iostream>
 using namespace std;
-void EXMP::set_num(int a)
+void EXMP::new_el(int a,int b)
 {
     number=a;
+    type=b;
 }
 void EXMP::view()
 {
-    cout<<number<<"   ";
+    cout<<type<<"   "<<number;
     cout<<endl;
 }
 
